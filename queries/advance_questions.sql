@@ -20,6 +20,7 @@ JOIN ALBUM AS ALB ON TRK.ALBUM_ID = ALB.ALBUM_ID
 JOIN BEST_SELLING_ARTIST AS BSA ON ALB.ARTIST_ID = BSA.ARTIST_ID
 GROUP BY CUS.CUSTOMER_ID, BSA.NAME;
 
+
 -- Q2: We want to find out the most popular music Genre for each country. 
 -- A. We determine the most popular genre as the genre with the highest amount of purchases. 
 -- B. Write a query that returns each country along with the top Genre. 
@@ -39,6 +40,7 @@ WITH POPULAR_GENRE AS (
 )
 SELECT COUNTRY, TOP_GENRE, TOTAL_PURCHASES
 FROM POPULAR_GENRE WHERE ROW_NUM = 1;
+
 
 -- Q3: Write a query that determines the customer that has spent the most on music for each country. 
 -- A. Write a query that returns the country along with the top customer and how much they spent. 
